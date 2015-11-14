@@ -2,10 +2,34 @@
 	name = Peter Conerly
 	email = pconerly@gmail.com
 [color]
-        diff = auto
-        status = auto
-        branch = auto
+	diff = auto
+	status = auto
+	branch = auto
+[color "status"]
+	header = white 
+	branch = magenta bold
+	added = green 
+	changed = yellow 
+	untracked = white ul
+[color "diff"]
+	meta = white bold
+	frag = magenta ul 
+	old = red bold
+	new = green bold
 [format]
-        pretty = "Commit:  %C(yellow)%H%nAuthor:  %C(green)%aN <%aE>%nDate:    (%C(red)%ar%Creset) %ai%nSubject: %s%n%n%b"
+	pretty = "Commit:  %C(yellow)%H%nAuthor:  %C(green)%aN <%aE>%nDate:    (%C(red)%ar%Creset) %ai%nSubject: %s%n%n%b"
 [alias]
 	conflicts = !git ls-files -u | cut -f 2 | sort -u
+[credential]
+	helper = cache --timeout=3600
+[core]
+	autocrlf = input
+	editor = vim
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[push]
+	default = simple
